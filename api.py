@@ -1,7 +1,9 @@
 import requests
 
-url = "https://official-joke-api.appspot.com/jokes/random"
-response = requests.get(url).json()
+url = "https://official-joke-api.appspot.com/jokes/15"
+dados = requests.get(url).json()
 
-print(response["setup"])
-print(response["punchline"])
+#Para buscar uma piada específica, basta alterar o número no final da URL. Por exemplo, para buscar a piada de número 15, a URL seria "https://official-joke-api.appspot.com/jokes/15".
+
+print(dados["setup"])
+print(dados["punchline"])
