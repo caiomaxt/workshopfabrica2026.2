@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member List</title>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 700px;
+        }
+        h1 {
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 8px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            color: #6b7280;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Registered Members</h1>
+        <p class="subtitle">Workshop Factory of Software System</p>
+
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Age</th>
+                <th>Phone</th>
+            </tr>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.username }}</td>
+                <td>{{ member.age }}</td>
+                <td>{{ member.phone }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a class="back-link" href="{% url 'home' %}">&larr; Back to Home</a>
+    </div>
+</body>
+</html>

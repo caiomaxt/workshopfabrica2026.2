@@ -3,7 +3,7 @@ from .forms import UsuarioForm
 from .models import Usuario
 
 def home(request):
-    return render(request, 'app/home.html')
+    return render(request, 'home.html')
 
 def register_view(request):
     if request.method == 'POST':
@@ -14,9 +14,13 @@ def register_view(request):
     else:
         form = UsuarioForm()
         
-    return render(request, 'app/register.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 # View que estava faltando para a rota 'detail/<int:pk>/'
 def detail_view(request, pk):
     usuario = get_object_or_404(Usuario, pk=pk)
-    return render(request, 'app/detail.html', {'usuario': usuario})
+    return render(request, 'detail.html', {'usuario': usuario})
+
+def member_list(request):
+    members = Usuario.objects.all()
+    return render(request, 'member_list.html', {'members': members})
