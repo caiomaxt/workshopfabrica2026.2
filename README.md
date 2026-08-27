@@ -15,5 +15,6 @@ Repositório dedicado aos exercícios e projetos desenvolvidos durante o worksho
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/caiomaxt/workshopfabrica2026.2.git](https://github.com/caiomaxt/workshopfabrica2026.2.git)
+   git clone https://github.com/caiomaxt/workshopfabrica2026.2.git
    cd workshopfabrica2026.2
+   
